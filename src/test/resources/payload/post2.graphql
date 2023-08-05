@@ -1,0 +1,13 @@
+query GetCountry {
+  country(code: "<id>") {
+    name
+    native
+    capital
+    emoji
+    currency
+    languages {
+      code
+      name
+    }
+  }
+}
