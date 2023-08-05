@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: dorny/test-reporter@v1
       with:
-        artifact: test-results
+        artifact: Test Reports
         name: JUnit Tests
         path: 'target/surefire-reports/*.xml'
         reporter: java-junit
