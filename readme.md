@@ -1,4 +1,4 @@
-# **itq-karate-poc**
+# **karate-poc**
 
 ## Run the suite
 - `` mvn clean test ``
