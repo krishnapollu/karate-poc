@@ -36,8 +36,7 @@ jobs:
           name: Test Reports
           path: |
             - ./target/karate-reports/
-            - ./target/surefire-reports/
+            # - ./target/surefire-reports/
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-          folder: ./target/karate-reports/
+      id: deployment
+      uses: actions/deploy-pages@v1
