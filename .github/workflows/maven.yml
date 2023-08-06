@@ -14,6 +14,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
 
@@ -29,6 +34,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B test
+    - name: Setup Github Pages
+      uses: actions/configure-pages@v2
     - name: Karate DSL Test Reports
       uses: actions/upload-artifact@v2
       if: ${{ always() }}
