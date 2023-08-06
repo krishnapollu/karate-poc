@@ -34,8 +34,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B test
-    - name: Setup Github Pages
-      uses: actions/configure-pages@v2
+    # - name: Setup Github Pages
+    #   uses: actions/configure-pages@v2
     - name: Karate DSL Test Reports
       uses: actions/upload-artifact@v2
       if: ${{ always() }}
@@ -43,7 +43,7 @@ jobs:
           name: Test Reports
           path: |
             - ./target/karate-reports/
-            - ./target/surefire-reports/
-    - name: Deploy
-      id: deployment
-      uses: actions/deploy-pages@v1
+            # - ./target/surefire-reports/
+    # - name: Deploy
+    #   id: deployment
+    #   uses: actions/deploy-pages@v1
