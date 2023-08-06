@@ -42,7 +42,7 @@ jobs:
       with:
           name: Test Reports
           path: |
-            - ./target/karate-reports/
+            - target/karate-reports/
             # - ./target/surefire-reports/
     - name: Deploy
       id: deployment
