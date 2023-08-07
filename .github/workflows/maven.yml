@@ -40,7 +40,6 @@ jobs:
       uses: actions/upload-artifact@v2
       if: ${{ always() }}
       with:
-          name: Test Reports
           path: | 
             ./target/karate-reports/
     - name: Deploy
