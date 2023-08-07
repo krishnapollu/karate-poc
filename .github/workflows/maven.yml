@@ -36,7 +36,7 @@ jobs:
       id: pages
       uses: actions/configure-pages@v2
     - name: Karate DSL Test Reports
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-pages-artifact@v1
       if: ${{ always() }}
       with:
           path: | 
