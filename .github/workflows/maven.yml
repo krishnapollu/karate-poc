@@ -29,6 +29,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B test
+    - name: create index page
+      run: |
+        echo "<html><body><h1><a href='./karate-summary.html'>Summary Report</a></h1></body></html>" > target/karate-reports/index.html
     - name: Karate DSL Test Reports
       uses: actions/upload-artifact@v2
       if: ${{ always() }}
