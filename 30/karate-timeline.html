@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"feature\/GQL[1:7]","start":1691797069410,"end":1691797070365,"title":"feature\/GQL[1:7] 23:37:49.410-23:37:50.365 Sample GQL Request"},{"id":2,"group":2,"content":"feature\/GQL[2:17]","start":1691797069416,"end":1691797070368,"title":"feature\/GQL[2:17] 23:37:49.416-23:37:50.368 Sample GQL Request with updated query"},{"id":3,"group":3,"content":"feature\/REST_GET[1:7]","start":1691797069411,"end":1691797070334,"title":"feature\/REST_GET[1:7] 23:37:49.411-23:37:50.334 Simple GET"},{"id":4,"group":4,"content":"feature\/REST_GET[2:13]","start":1691797069411,"end":1691797070304,"title":"feature\/REST_GET[2:13] 23:37:49.411-23:37:50.304 Simple GET with background"},{"id":5,"group":5,"content":"feature\/REST_GET[3:19]","start":1691797069411,"end":1691797070373,"title":"feature\/REST_GET[3:19] 23:37:49.411-23:37:50.373 Simple GET with background and validate response","className":"failed"},{"id":6,"group":4,"content":"feature\/REST_POST[1:7]","start":1691797070343,"end":1691797070817,"title":"feature\/REST_POST[1:7] 23:37:50.343-23:37:50.817 Simple POST"},{"id":7,"group":3,"content":"feature\/REST_POST[2:15]","start":1691797070349,"end":1691797070814,"title":"feature\/REST_POST[2:15] 23:37:50.349-23:37:50.814 Simple POST with payload from file"},{"id":8,"group":1,"content":"feature\/SOAP_POST[1:10]","start":1691797070385,"end":1691797071240,"title":"feature\/SOAP_POST[1:10] 23:37:50.385-23:37:51.240 Sample POST"},{"id":9,"group":2,"content":"feature\/SOAP_POST[2:17]","start":1691797070373,"end":1691797071233,"title":"feature\/SOAP_POST[2:17] 23:37:50.373-23:37:51.233 Sample POST after updating xml file content"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
